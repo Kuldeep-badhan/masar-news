@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  border: 1px solid black;
+  &__newsletter {
+    flex: 0.2;
+  }
+  &__nav {
+    border: 1px solid black;
+    flex: 0.8;
+    &__links {
+      display: flex;
+      gap: 1rem;
+      .links {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
