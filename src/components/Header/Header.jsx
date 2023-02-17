@@ -5,223 +5,450 @@ import { TbSocial } from "react-icons/tb";
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineMinus } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { RxCross1 } from "react-icons/rx";
 import logo from "../../assets/News.svg";
 import img from "../../assets/images/img-1.jpg";
 const Header = () => {
-  const [bar, setBar] = useState(false);
+  const [bar, setBar] = useState(true);
   const [toggleTopic, setToggleTopic] = useState(false);
   const [strategyToggle, setStrategyToggle] = useState(false);
   const [mediaToggle, setMediaToggle] = useState(false);
+  const [search, setSearch] = useState(false);
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
 
+  const resizeFn = () => {
+    setInnerWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", resizeFn);
+    return () => {
+      window.removeEventListener("resize", resizeFn);
+    };
+  }, [innerWidth]);
   return (
-    <div className="header">
-      <div className="header__logo">
-        <img src={logo} alt="logo image" />
-      </div>
-      <div className="bar">
-        <RxHamburgerMenu />
-      </div>
-
-      <div className="header__main-links">
-        <ul>
-          <li>Explore by</li>
-          <li>
-            <Link to={"/Clean-Energy"}>CLEAN ENERGY</Link>
-          </li>
-          <li className="link_strategy">
-            <Link
-              to={"/Strategic-Platform"}
-              onMouseEnter={() => setStrategyToggle(true)}
-              onMouseLeave={() => setStrategyToggle(false)}
-            >
-              {" "}
-              STRATEGY PLATFORM
-            </Link>
-            {strategyToggle ? (
-              <MdOutlineKeyboardArrowDown />
-            ) : (
-              <MdOutlineKeyboardArrowUp />
-            )}
-          </li>
-          <li
-            className="link_topics"
-            onClick={() => setToggleTopic(!toggleTopic)}
+    <div className="header__container">
+      <div className="header">
+        <div className="header__logo">
+          <Link
+            onClick={() => {
+              setBar(false);
+              setToggleTopic(false);
+            }}
+            to={"/"}
           >
-            TOPICS
-            {toggleTopic ? (
-              <MdOutlineKeyboardArrowDown />
-            ) : (
-              <MdOutlineKeyboardArrowUp />
-            )}
-          </li>
-          <li>
-            <Link to={"/Tech-Trends"}>Tech Trends</Link>
-          </li>
-          <li
-            className="link_media"
-            onMouseEnter={() => setMediaToggle(true)}
-            onMouseLeave={() => setMediaToggle(false)}
-          >
-            <Link to={"/Media"}>Media</Link>
-            {mediaToggle ? (
-              <MdOutlineKeyboardArrowDown />
-            ) : (
-              <MdOutlineKeyboardArrowUp />
-            )}
-          </li>
-          <li>
-            <Link to={"/Events"}>Events</Link>
-          </li>
-        </ul>
-        {toggleTopic && (
-          <div className="header__topics">
+            <img src={logo} alt="logo image" />
+          </Link>
+        </div>
+        <div className="bar">
+          <RxHamburgerMenu
+            onClick={() => {
+              setBar(!bar);
+              setMediaToggle(false);
+              setStrategyToggle(false);
+              setToggleTopic(false);
+            }}
+          />
+        </div>
+        {bar || innerWidth >= 1251 ? (
+          <div className="header__main-links">
             <ul>
-              <div className="row">
-                <Link to={"/Corporate"}>
-                  <li>
-                    <img src={img} alt="image" />
-                    Corporate
-                  </li>
+              <li>Explore by</li>
+              <li>
+                <Link
+                  onClick={() => {
+                    setBar(false);
+                    setToggleTopic(false);
+                  }}
+                  to={"/Clean-Energy"}
+                >
+                  CLEAN ENERGY
                 </Link>
-                <Link to={"/Green-Hydrogen"}>
-                  <li>
-                    <img src={img} alt="image" />
-                    Green Hydrogen
-                  </li>
-                </Link>
-                <Link to={"/Projects"}>
-                  <li>
-                    <img src={img} alt="image" />
-                    Projects
-                  </li>
-                </Link>
-              </div>
-              <div className="row">
-                <Link to={"/Awards"}>
-                  <li>
-                    <img src={img} alt="image" />
-                    Awards
-                  </li>
-                </Link>
-                <Link to={"/Partnership"}>
-                  <li>
-                    <img src={img} alt="image" />
-                    Partnership
-                  </li>
-                </Link>
-                <Link to={"/Innovation"}>
-                  <li>
-                    <img src={img} alt="image" />
-                    Innovation
-                  </li>
-                </Link>
-              </div>
-              <div className="row">
-                <Link to={"/Investments"}>
-                  <li>
-                    <img src={img} alt="image" />
-                    Investments
-                  </li>
-                </Link>
-                <Link to={"/Insights"}>
-                  <li>
-                    <img src={img} alt="image" />
-                    Insights
-                  </li>
-                </Link>
-                <Link to={"/Destination"}>
-                  <li>
-                    <img src={img} alt="image" />
-                    Destination
-                  </li>
-                </Link>
-              </div>
-              <div className="row">
-                <Link to={"/Catalyst"}>
-                  <li>
-                    <img src={img} alt="image" />
-                    Catalyst
-                  </li>
-                </Link>
-                <Link to="Vip-Visits">
-                  <li>
-                    <img src={img} alt="image" />
-                    VIP Visits
-                  </li>
-                </Link>
-                <Link to={"/Reports"}>
-                  <li>
-                    <img src={img} alt="image" />
-                    Reports
-                  </li>
-                </Link>
-              </div>
-            </ul>
-          </div>
-        )}
-        {strategyToggle && (
-          <div
-            className="header__strategy-nav"
-            // onMouseEnter={() => setStrategyToggle(true)}
-            onMouseLeave={() => setStrategyToggle(false)}
-          >
-            <div className="row">
-              <Link to={"/ADSW"}>
-                <li>
-                  <img src={img} alt="image" />
-                  ADSW
-                </li>
-              </Link>
-              <Link to={"/ZSP"}>
-                <li>
-                  <img src={img} alt="image" />
-                  ZSP
-                </li>
-              </Link>
-            </div>
-            <div className="row">
-              <Link to={"/WiSER"}>
-                <li>
-                  <img src={img} alt="image" />
-                  WiSER
-                </li>
-              </Link>
-              <Link to={"/Youth"}>
-                <li>
-                  <img src={img} alt="image" />
-                  Youth
-                </li>
-              </Link>
-            </div>
-          </div>
-        )}{" "}
-        {mediaToggle && (
-          <div
-            className="header__media"
-            onMouseLeave={() => setMediaToggle(false)}
-          >
-            <ul>
-              <Link to={"/In-The-Media"}>
-                <li>In The Media</li>
-              </Link>
-              <Link to={"/Press-Release"}>
-                <li>Press Releases</li>
-              </Link>
-              <Link to={"/News-Letter"}>
-                <li>News Letter</li>
-              </Link>
-            </ul>
-          </div>
-        )}
-      </div>
+              </li>
+              <li>
+                <div
+                  className="link_strategy"
+                  onMouseEnter={() => {
+                    innerWidth >= 1250 && setStrategyToggle(true);
+                  }}
+                  onMouseLeave={() => {
+                    innerWidth >= 1250 && setStrategyToggle(false);
+                  }}
+                  onClick={() => {
+                    setStrategyToggle(!strategyToggle);
+                  }}
+                >
+                  <Link
+                    onClick={() => {
+                      setBar(false);
+                      setToggleTopic(false);
+                    }}
+                    to={"/Strategic-Platform"}
+                  >
+                    {" "}
+                    STRATEGY PLATFORM
+                  </Link>
 
-      <div className="header__search-box">
-        <span>arabic</span>
-        <div className="header__icons">
-          <TbSocial className="icon" />
+                  {strategyToggle ? (
+                    innerWidth >= 1250 ? (
+                      <MdOutlineKeyboardArrowDown />
+                    ) : (
+                      <AiOutlineMinus />
+                    )
+                  ) : innerWidth >= 1250 ? (
+                    <MdOutlineKeyboardArrowUp />
+                  ) : (
+                    <AiOutlinePlus />
+                  )}
+                </div>
+                {strategyToggle && (
+                  <div
+                    className="header__strategy-nav show"
+                    onMouseEnter={() => setStrategyToggle(true)}
+                    onMouseLeave={() => setStrategyToggle(false)}
+                  >
+                    <div className="row">
+                      <Link
+                        onClick={() => {
+                          setBar(false);
+                          setToggleTopic(false);
+                        }}
+                        to={"/ADSW"}
+                      >
+                        <li>
+                          <img src={img} alt="image" />
+                          ADSW
+                        </li>
+                      </Link>
+                      <Link
+                        onClick={() => {
+                          setBar(false);
+                          setToggleTopic(false);
+                        }}
+                        to={"/ZSP"}
+                      >
+                        <li>
+                          <img src={img} alt="image" />
+                          ZSP
+                        </li>
+                      </Link>
+                    </div>
+                    <div className="row">
+                      <Link
+                        onClick={() => {
+                          setBar(false);
+                          setToggleTopic(false);
+                        }}
+                        to={"/WiSER"}
+                      >
+                        <li>
+                          <img src={img} alt="image" />
+                          WiSER
+                        </li>
+                      </Link>
+                      <Link
+                        onClick={() => {
+                          setBar(false);
+                          setToggleTopic(false);
+                        }}
+                        to={"/Youth"}
+                      >
+                        <li>
+                          <img src={img} alt="image" />
+                          Youth
+                        </li>
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </li>
+              <li
+                className="link_topics"
+                onClick={() => setToggleTopic(!toggleTopic)}
+              >
+                TOPICS
+                {toggleTopic ? (
+                  <MdOutlineKeyboardArrowDown />
+                ) : (
+                  <MdOutlineKeyboardArrowUp />
+                )}
+              </li>
+              <li>
+                <Link
+                  onClick={() => {
+                    setBar(false);
+                    setToggleTopic(false);
+                  }}
+                  to={"/Tech-Trends"}
+                >
+                  Tech Trends
+                </Link>
+              </li>
+              <li
+                onMouseEnter={() => {
+                  innerWidth >= 1250 && setMediaToggle(true);
+                }}
+                onMouseLeave={() => {
+                  innerWidth >= 1250 && setMediaToggle(false);
+                }}
+                onClick={() => setMediaToggle(!mediaToggle)}
+              >
+                <div className="link_media">
+                  <Link
+                    onClick={() => {
+                      setBar(false);
+                      setToggleTopic(false);
+                    }}
+                    to={"/Media"}
+                  >
+                    Media
+                  </Link>
+                  {mediaToggle ? (
+                    innerWidth >= 1250 ? (
+                      <MdOutlineKeyboardArrowDown />
+                    ) : (
+                      <AiOutlineMinus />
+                    )
+                  ) : innerWidth >= 1250 ? (
+                    <MdOutlineKeyboardArrowUp />
+                  ) : (
+                    <AiOutlinePlus />
+                  )}
+                </div>
 
-          <AiOutlineSearch className="icon" />
+                {mediaToggle && (
+                  <div
+                    className={"header__media show"}
+                    // onMouseLeave={() => setMediaToggle(false)}
+                  >
+                    <ul>
+                      <Link
+                        onClick={() => {
+                          setBar(false);
+                          setToggleTopic(false);
+                        }}
+                        to={"/In-The-Media"}
+                      >
+                        <li>In The Media</li>
+                      </Link>
+                      <Link
+                        onClick={() => {
+                          setBar(false);
+                          setToggleTopic(false);
+                        }}
+                        to={"/Press-Release"}
+                      >
+                        <li>Press Releases</li>
+                      </Link>
+                      <Link
+                        onClick={() => {
+                          setBar(false);
+                          setToggleTopic(false);
+                        }}
+                        to={"/News-Letter"}
+                      >
+                        <li>News Letter</li>
+                      </Link>
+                    </ul>
+                  </div>
+                )}
+              </li>
+              <li>
+                <Link
+                  onClick={() => {
+                    setBar(false);
+                    setToggleTopic(false);
+                  }}
+                  to={"/Events"}
+                >
+                  Events
+                </Link>
+              </li>
+            </ul>
+            {toggleTopic && (
+              <div className="header__topics">
+                <ul>
+                  {/* <div className="row"> */}
+                  <Link
+                    onClick={() => {
+                      setBar(false);
+                      setToggleTopic(false);
+                    }}
+                    to={"/Corporate"}
+                  >
+                    <li>
+                      <img src={img} alt="image" />
+                      Corporate
+                    </li>
+                  </Link>
+                  <Link
+                    onClick={() => {
+                      setBar(false);
+                      setToggleTopic(false);
+                    }}
+                    to={"/Green-Hydrogen"}
+                  >
+                    <li>
+                      <img src={img} alt="image" />
+                      Green Hydrogen
+                    </li>
+                  </Link>
+                  <Link
+                    onClick={() => {
+                      setBar(false);
+                      setToggleTopic(false);
+                    }}
+                    to={"/Projects"}
+                  >
+                    <li>
+                      <img src={img} alt="image" />
+                      Projects
+                    </li>
+                  </Link>
+                  {/* </div> */}
+                  {/* <div className="row"> */}
+                  <Link
+                    onClick={() => {
+                      setBar(false);
+                      setToggleTopic(false);
+                    }}
+                    to={"/Awards"}
+                  >
+                    <li>
+                      <img src={img} alt="image" />
+                      Awards
+                    </li>
+                  </Link>
+                  <Link
+                    onClick={() => {
+                      setBar(false);
+                      setToggleTopic(false);
+                    }}
+                    to={"/Partnership"}
+                  >
+                    <li>
+                      <img src={img} alt="image" />
+                      Partnership
+                    </li>
+                  </Link>
+                  <Link
+                    onClick={() => {
+                      setBar(false);
+                      setToggleTopic(false);
+                    }}
+                    to={"/Innovation"}
+                  >
+                    <li>
+                      <img src={img} alt="image" />
+                      Innovation
+                    </li>
+                  </Link>
+                  {/* </div> */}
+                  {/* <div className="row"> */}
+                  <Link
+                    onClick={() => {
+                      setBar(false);
+                      setToggleTopic(false);
+                    }}
+                    to={"/Investments"}
+                  >
+                    <li>
+                      <img src={img} alt="image" />
+                      Investments
+                    </li>
+                  </Link>
+                  <Link
+                    onClick={() => {
+                      setBar(false);
+                      setToggleTopic(false);
+                    }}
+                    to={"/Insights"}
+                  >
+                    <li>
+                      <img src={img} alt="image" />
+                      Insights
+                    </li>
+                  </Link>
+                  <Link
+                    onClick={() => {
+                      setBar(false);
+                      setToggleTopic(false);
+                    }}
+                    to={"/Destination"}
+                  >
+                    <li>
+                      <img src={img} alt="image" />
+                      Destination
+                    </li>
+                  </Link>
+                  {/* </div> */}
+                  {/* <div className="row"> */}
+                  <Link
+                    onClick={() => {
+                      setBar(false);
+                      setToggleTopic(false);
+                    }}
+                    to={"/Catalyst"}
+                  >
+                    <li>
+                      <img src={img} alt="image" />
+                      Catalyst
+                    </li>
+                  </Link>
+                  <Link
+                    onClick={() => {
+                      setBar(false);
+                      setToggleTopic(false);
+                    }}
+                    to="Vip-Visits"
+                  >
+                    <li>
+                      <img src={img} alt="image" />
+                      VIP Visits
+                    </li>
+                  </Link>
+                  <Link
+                    onClick={() => {
+                      setBar(false);
+                      setToggleTopic(false);
+                    }}
+                    to={"/Reports"}
+                  >
+                    <li>
+                      <img src={img} alt="image" />
+                      Reports
+                    </li>
+                  </Link>
+                  {/* </div> */}
+                </ul>
+              </div>
+            )}
+          </div>
+        ) : null}
+        <div className="header__search-box">
+          <span>arabic</span>
+          <div className="header__icons">
+            <TbSocial className="icon" />
+            {search ? (
+              <RxCross1 className="icon" onClick={() => setSearch(false)} />
+            ) : (
+              <AiOutlineSearch
+                className="icon"
+                onClick={() => setSearch(true)}
+              />
+            )}
+          </div>
+
+          <div className={search ? "header__search open" : "header__search "}>
+            <div className="search__wrapper">
+              <label htmlFor="search">Enter keyword:</label>
+              <input type="text" name="search" id="search" />
+            </div>
+            <button>Search</button>
+          </div>
         </div>
       </div>
     </div>

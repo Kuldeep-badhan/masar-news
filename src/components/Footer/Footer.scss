@@ -1,18 +1,144 @@
+@import "../../styleUtils/vars.scss";
+
+@mixin for-tablet-up {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+@mixin for-mobile-up {
+  @media (max-width: 700px) {
+    @content;
+  }
+}
+
 .footer {
+  margin: auto;
   display: flex;
-  border: 1px solid black;
+  min-height: 450px;
+  @include for-tablet-up() {
+    flex-direction: column;
+  }
   &__newsletter {
-    flex: 0.2;
+    width: 30%;
+    background-color: #ebf2f7;
+    padding: 3rem 4rem;
+    display: flex;
+    justify-content: flex-end;
+    @include for-tablet-up() {
+      justify-content: center;
+      width: 100%;
+      padding: 1rem;
+      form {
+        flex-direction: row !important;
+        align-items: center;
+        label {
+          width: 250px !important;
+        }
+      }
+    }
+    @include for-mobile-up() {
+      form {
+        flex-direction: column !important;
+        text-align: center;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 500px;
+      strong {
+        color: $gray-dark;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      .letter_input {
+        position: relative;
+        input {
+          width: 200px;
+          border: 1px solid $gray;
+          padding: 0.3rem 0.3rem 0.3rem 2rem;
+        }
+        .mail_icon {
+          position: absolute;
+          left: 3%;
+          top: 22%;
+          color: $primary;
+        }
+      }
+      label {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        width: 100%;
+        font-size: small;
+        color: $gray;
+      }
+      button {
+        border: none;
+        background-color: $primary;
+        color: $white;
+        padding: 0.8rem 1.5rem;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
   }
   &__nav {
-    border: 1px solid black;
-    flex: 0.8;
+    width: 80%;
+
+    padding: 3vw 1vw 1vw 1vw;
+    box-shadow: 0 2px 5px $info, 0 -2px 5px $info;
+    @include for-tablet-up() {
+      width: 100%;
+      padding: 1rem;
+    }
     &__links {
       display: flex;
-      gap: 1rem;
+      gap: 5vw;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
       .links {
         display: flex;
         flex-direction: column;
+        h3 {
+          color: $gray-dark;
+          font-weight: 500;
+          font-size: 1rem;
+        }
+        &:first-child,
+        &:last-child {
+          a {
+            font-size: 1rem;
+            color: $gray-dark;
+          }
+        }
+        a {
+          transition: $transition;
+          font-size: 0.9rem;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+    &--copyright {
+      max-width: 2000px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include for-mobile-up() {
+        flex-direction: column;
+      }
+      img {
+        width: 200px;
+      }
+      p {
+        color: $primary;
+        font-size: 0.9rem;
       }
     }
   }

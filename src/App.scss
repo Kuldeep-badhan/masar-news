@@ -4,6 +4,12 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
 }
 
 ul {
@@ -13,7 +19,6 @@ ul {
 a {
   text-decoration: none;
   color: $gray;
-  font-family: "Poppins", sans-serif;
 }
 
 .app {
