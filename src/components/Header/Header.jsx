@@ -12,7 +12,7 @@ import { RxCross1 } from "react-icons/rx";
 import logo from "../../assets/News.svg";
 import img from "../../assets/images/img-1.jpg";
 const Header = () => {
-  const [bar, setBar] = useState(true);
+  const [bar, setBar] = useState(false);
   const [toggleTopic, setToggleTopic] = useState(false);
   const [strategyToggle, setStrategyToggle] = useState(false);
   const [mediaToggle, setMediaToggle] = useState(false);

@@ -31,6 +31,7 @@ import VipVisits from "./pages/Topic/VipVisits/VipVisits";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
+import Topic from "./pages/Topic/Topic";
 function App() {
   return (
     <div className="app">
@@ -42,7 +43,7 @@ function App() {
           <Route path="/Contact-Us" element={<Contact />} />
           <Route path="/In-The-Media" element={<InTheMedia />} />
           <Route path="/Media" element={<Media />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Topic />} />
           <Route path="/News-Letter" element={<NewsLetter />} />
           <Route path="/Press-Release" element={<PressRelease />} />
           <Route path="/Events" element={<Events />} />

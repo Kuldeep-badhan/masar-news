@@ -1,0 +1,88 @@
+@import "../../styleUtils/vars.scss";
+
+@mixin for-laptop-up {
+  @media (max-width: 1300px) {
+    @content;
+  }
+}
+@mixin for-tablet-up {
+  @media (max-width: 1000px) {
+    @content;
+  }
+}
+@mixin for-mobile-up {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+@mixin for-mobile-small-up {
+  @media (max-width: 360px) {
+    @content;
+  }
+}
+
+.topic {
+  min-height: 100vh;
+  width: 95%;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: $info;
+  @include for-mobile-up() {
+    padding: 0.8rem;
+    width: 100%;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    &--bar {
+      background-color: $white;
+      padding: 2rem;
+      width: 100%;
+    }
+  }
+  &__body {
+    padding: 1rem;
+    background-color: $white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    @include for-laptop-up() {
+      .custom__card {
+        height: 20vw;
+        width: 20vw;
+        gap: 0.2rem;
+        padding: 1rem;
+      }
+    }
+    @include for-tablet-up() {
+      grid-template-columns: repeat(3, 1fr);
+      place-items: center;
+      .custom__card {
+        height: 26vw;
+        width: 26vw;
+        gap: 0.2rem;
+        padding: 1rem;
+      }
+    }
+    @include for-mobile-up() {
+      grid-template-columns: 1fr !important;
+      place-items: center;
+      .custom__card {
+        height: 83vw;
+        width: 83vw;
+        margin: auto;
+      }
+    }
+    @include for-mobile-small-up() {
+      .custom__card {
+        height: 75fvw;
+        width: 75fvw;
+        margin: auto;
+      }
+    }
+  }
+}
