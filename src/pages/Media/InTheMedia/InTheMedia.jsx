@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../../components/Card/Card";
-import dummyData from "../../../assets/data/dummyData";
+import data from "../../../assets/data/data";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 
 import "./InTheMedia.scss";
@@ -17,14 +17,13 @@ const InTheMedia = () => {
         <div className="in__the__media__header--bar">
           <h2>In The Media</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Consequuntur excepturi sed dolores natus voluptatem facere unde
-            suscipit, beatae vero perferendis fuga distinctio.
+            Follow local, regional and international news coverage of Masdar’s
+            expanding business activities and renewable energy portfolio.
           </p>
         </div>
       </div>
       <div className="in__the__media__body">
-        {dummyData.map((item, index) => {
+        {data.map((item, index) => {
           return (
             <Card
               key={index + 1}

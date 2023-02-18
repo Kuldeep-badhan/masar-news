@@ -113,11 +113,6 @@
     h3 {
       color: $primary;
     }
-    @include for-laptop-up() {
-      .choice:last-child {
-        display: none;
-      }
-    }
     @include for-tablet-up() {
       .choice:nth-child(3) {
         display: none;
@@ -331,6 +326,13 @@
           height: 280px;
           width: 280px;
           gap: 0.2rem;
+        }
+        @include for-laptop-up() {
+          .custom__card {
+            height: 23.5vw;
+            width: 21vw;
+            gap: 0.2rem;
+          }
         }
         @include for-tablet-up() {
           .trends__para {

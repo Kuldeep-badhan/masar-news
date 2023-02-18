@@ -10,7 +10,22 @@ import { AiOutlineMinus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { RxCross1 } from "react-icons/rx";
 import logo from "../../assets/News.svg";
-import img from "../../assets/images/img-1.jpg";
+import awards from "../../assets/topics/awards.png";
+import catalyst from "../../assets/topics/catalyst.png";
+import Corporate from "../../assets/topics/Corporate.png";
+import destinations from "../../assets/topics/destinations.png";
+import Green from "../../assets/topics/Green.png";
+import innovation from "../../assets/topics/innovation.png";
+import insights from "../../assets/topics/insights.png";
+import investments from "../../assets/topics/investments.png";
+import partnership from "../../assets/topics/partnership.png";
+import projects from "../../assets/topics/projects.png";
+import reports from "../../assets/topics/reports.png";
+import vip from "../../assets/topics/vip.png";
+import adsw from "../../assets/strategy/adsw.png";
+import wiser from "../../assets/strategy/WiSER.png";
+import youth from "../../assets/strategy/Youth.png";
+import zsp from "../../assets/strategy/ZSP.png";
 const Header = () => {
   const [bar, setBar] = useState(false);
   const [toggleTopic, setToggleTopic] = useState(false);
@@ -119,7 +134,7 @@ const Header = () => {
                         to={"/ADSW"}
                       >
                         <li>
-                          <img src={img} alt="image" />
+                          <img src={adsw} alt="image" />
                           ADSW
                         </li>
                       </Link>
@@ -131,7 +146,7 @@ const Header = () => {
                         to={"/ZSP"}
                       >
                         <li>
-                          <img src={img} alt="image" />
+                          <img src={zsp} alt="image" />
                           ZSP
                         </li>
                       </Link>
@@ -145,7 +160,7 @@ const Header = () => {
                         to={"/WiSER"}
                       >
                         <li>
-                          <img src={img} alt="image" />
+                          <img src={wiser} alt="image" />
                           WiSER
                         </li>
                       </Link>
@@ -157,7 +172,7 @@ const Header = () => {
                         to={"/Youth"}
                       >
                         <li>
-                          <img src={img} alt="image" />
+                          <img src={youth} alt="image" />
                           Youth
                         </li>
                       </Link>
@@ -280,7 +295,7 @@ const Header = () => {
                     to={"/Corporate"}
                   >
                     <li>
-                      <img src={img} alt="image" />
+                      <img src={Corporate} alt="image" />
                       Corporate
                     </li>
                   </Link>
@@ -292,7 +307,7 @@ const Header = () => {
                     to={"/Green-Hydrogen"}
                   >
                     <li>
-                      <img src={img} alt="image" />
+                      <img src={Green} alt="image" />
                       Green Hydrogen
                     </li>
                   </Link>
@@ -304,7 +319,7 @@ const Header = () => {
                     to={"/Projects"}
                   >
                     <li>
-                      <img src={img} alt="image" />
+                      <img src={projects} alt="image" />
                       Projects
                     </li>
                   </Link>
@@ -318,7 +333,7 @@ const Header = () => {
                     to={"/Awards"}
                   >
                     <li>
-                      <img src={img} alt="image" />
+                      <img src={awards} alt="image" />
                       Awards
                     </li>
                   </Link>
@@ -330,7 +345,7 @@ const Header = () => {
                     to={"/Partnership"}
                   >
                     <li>
-                      <img src={img} alt="image" />
+                      <img src={partnership} alt="image" />
                       Partnership
                     </li>
                   </Link>
@@ -342,7 +357,7 @@ const Header = () => {
                     to={"/Innovation"}
                   >
                     <li>
-                      <img src={img} alt="image" />
+                      <img src={innovation} alt="image" />
                       Innovation
                     </li>
                   </Link>
@@ -356,7 +371,7 @@ const Header = () => {
                     to={"/Investments"}
                   >
                     <li>
-                      <img src={img} alt="image" />
+                      <img src={investments} alt="image" />
                       Investments
                     </li>
                   </Link>
@@ -368,7 +383,7 @@ const Header = () => {
                     to={"/Insights"}
                   >
                     <li>
-                      <img src={img} alt="image" />
+                      <img src={insights} alt="image" />
                       Insights
                     </li>
                   </Link>
@@ -380,7 +395,7 @@ const Header = () => {
                     to={"/Destination"}
                   >
                     <li>
-                      <img src={img} alt="image" />
+                      <img src={destinations} alt="image" />
                       Destination
                     </li>
                   </Link>
@@ -394,7 +409,7 @@ const Header = () => {
                     to={"/Catalyst"}
                   >
                     <li>
-                      <img src={img} alt="image" />
+                      <img src={catalyst} alt="image" />
                       Catalyst
                     </li>
                   </Link>
@@ -406,7 +421,7 @@ const Header = () => {
                     to="Vip-Visits"
                   >
                     <li>
-                      <img src={img} alt="image" />
+                      <img src={vip} alt="image" />
                       VIP Visits
                     </li>
                   </Link>
@@ -418,7 +433,7 @@ const Header = () => {
                     to={"/Reports"}
                   >
                     <li>
-                      <img src={img} alt="image" />
+                      <img src={reports} alt="image" />
                       Reports
                     </li>
                   </Link>

@@ -7,12 +7,28 @@ import {
   BsYoutube,
 } from "react-icons/bs";
 import shekh from "../../assets/homeImg/shekh.jpeg";
+import home1 from "../../assets/homeImg/homeg1.jpg";
+import home2 from "../../assets/homeImg/homeg2.jpg";
+import home3 from "../../assets/homeImg/homeg3.jpg";
+import home4 from "../../assets/homeImg/homeg4.jpg";
+import editor1 from "../../assets/homeImg/editor1.jpg";
+import editor2 from "../../assets/homeImg/editor2.jpg";
+import editor3 from "../../assets/homeImg/editor3.jpg";
+import clean1 from "../../assets/homeImg/clean1.jpg";
+import clean2 from "../../assets/homeImg/clean2.jpg";
+import clean3 from "../../assets/homeImg/clean3.jpg";
+import clean4 from "../../assets/homeImg/clean4.jpg";
+import strategy1 from "../../assets/homeImg/strategy1.jpg";
+import strategy2 from "../../assets/homeImg/strategy2.png";
+import strategy3 from "../../assets/homeImg/strategy3.jpeg";
+import techtrends from "../../assets/homeImg/techtrends.jpg";
+import inthemedia1 from "../../assets/homeImg/inthemedia1.jpg";
+import inthemedia2 from "../../assets/homeImg/inthemedia2.jpg";
 import Card from "../../components/Card/Card";
-import img from "../../assets/images/img-8.jpg";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import "./Home.scss";
 const Home = () => {
-  const dummyData = [
+  const home = [
     {
       heading: "heading",
       desc: "description",
@@ -20,49 +36,103 @@ const Home = () => {
       tag: "corporate",
     },
   ];
-  const dummyData2 = [
+  const techtrendsarr = [
     {
       heading: "heading",
       desc: "description",
-      imgSrc: shekh,
-      tag: "corporate",
-    },
-    {
-      heading: "heading",
-      desc: "description",
-      imgSrc: shekh,
-      tag: "corporate",
-    },
-    {
-      heading: "heading",
-      desc: "description",
-      imgSrc: shekh,
-      tag: "corporate",
-    },
-    {
-      heading: "heading",
-      desc: "description",
-      imgSrc: shekh,
+      imgSrc: techtrends,
       tag: "corporate",
     },
   ];
-  const dummyData3 = [
+  const homeg = [
     {
       heading: "heading",
       desc: "description",
-      imgSrc: shekh,
+      imgSrc: home1,
       tag: "corporate",
     },
     {
       heading: "heading",
       desc: "description",
-      imgSrc: shekh,
+      imgSrc: home2,
       tag: "corporate",
     },
     {
       heading: "heading",
       desc: "description",
-      imgSrc: shekh,
+      imgSrc: home3,
+      tag: "corporate",
+    },
+    {
+      heading: "heading",
+      desc: "description",
+      imgSrc: home4,
+      tag: "corporate",
+    },
+  ];
+  const clean = [
+    {
+      heading: "heading",
+      desc: "description",
+      imgSrc: clean1,
+      tag: "corporate",
+    },
+    {
+      heading: "heading",
+      desc: "description",
+      imgSrc: clean2,
+      tag: "corporate",
+    },
+    {
+      heading: "heading",
+      desc: "description",
+      imgSrc: clean3,
+      tag: "corporate",
+    },
+    {
+      heading: "heading",
+      desc: "description",
+      imgSrc: clean4,
+      tag: "corporate",
+    },
+  ];
+  const strategy = [
+    {
+      heading: "heading",
+      desc: "description",
+      imgSrc: strategy1,
+      tag: "corporate",
+    },
+    {
+      heading: "heading",
+      desc: "description",
+      imgSrc: strategy2,
+      tag: "corporate",
+    },
+    {
+      heading: "heading",
+      desc: "description",
+      imgSrc: strategy3,
+      tag: "corporate",
+    },
+  ];
+  const intheMedia = [
+    {
+      heading: "heading",
+      desc: "description",
+      imgSrc: inthemedia1,
+      tag: "corporate",
+    },
+    {
+      heading: "heading",
+      desc: "description",
+      imgSrc: inthemedia2,
+      tag: "corporate",
+    },
+    {
+      heading: "heading",
+      desc: "description",
+      imgSrc: techtrends,
       tag: "corporate",
     },
   ];
@@ -72,7 +142,7 @@ const Home = () => {
       <div className="home__top">
         <div className="home__top--left">
           {" "}
-          {dummyData.map((item, index) => {
+          {home.map((item, index) => {
             return (
               <Card
                 key={index + 1}
@@ -85,7 +155,7 @@ const Home = () => {
           })}
         </div>
         <div className="home__top--right">
-          {dummyData2.map((item, index) => {
+          {homeg.map((item, index) => {
             return (
               <Card
                 key={index + 1}
@@ -102,28 +172,21 @@ const Home = () => {
         <h3>Editor's Choice</h3>
 
         <div className="choice">
-          <img src={img} alt="image" />
+          <img src={editor1} alt="image" />
           <div className="choice__desc">
             <p>Lorem ipsum dolor sit amet </p>
             <span>INSIGHTS</span>
           </div>
         </div>
         <div className="choice">
-          <img src={img} alt="image" />
+          <img src={editor2} alt="image" />
           <div className="choice__desc">
             <p>Lorem ipsum dolor sit amet </p>
             <span>INSIGHTS</span>
           </div>
         </div>
         <div className="choice">
-          <img src={img} alt="image" />
-          <div className="choice__desc">
-            <p>Lorem ipsum dolor sit amet </p>
-            <span>INSIGHTS</span>
-          </div>
-        </div>
-        <div className="choice">
-          <img src={img} alt="image" />
+          <img src={editor3} alt="image" />
           <div className="choice__desc">
             <p>Lorem ipsum dolor sit amet </p>
             <span>INSIGHTS</span>
@@ -139,7 +202,7 @@ const Home = () => {
           </Link>
         </div>
         <div className="bottom">
-          {dummyData2.map((item, index) => {
+          {clean.map((item, index) => {
             return (
               <div className="energy__option">
                 <Card
@@ -164,7 +227,7 @@ const Home = () => {
             </Link>
           </div>
           <div className="bottom">
-            {dummyData3.map((item, index) => {
+            {strategy.map((item, index) => {
               return (
                 <div className="energy__option">
                   <Card
@@ -188,7 +251,7 @@ const Home = () => {
             </Link>
           </div>
           <div className="bottom">
-            {dummyData.map((item, index) => {
+            {techtrendsarr.map((item, index) => {
               return (
                 <div className="energy__option">
                   <Card
@@ -219,7 +282,7 @@ const Home = () => {
           </Link>
         </div>
         <div className="bottom">
-          {dummyData3.map((item, index) => {
+          {intheMedia.map((item, index) => {
             return (
               <div className="energy__option">
                 <Card

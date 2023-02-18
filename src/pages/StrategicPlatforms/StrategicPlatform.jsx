@@ -1,30 +1,46 @@
 import React, { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
-import dummyData from "../../assets/data/dummyData";
+import dummyData from "../../assets/data/data";
 import { useLocation } from "react-router-dom";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 
 import "./StrategicPlatform.scss";
 const StrategicPlatform = () => {
   const [topic, setTopic] = useState("");
+  const [topicPara, setTopicPara] = useState("");
   const { pathname } = useLocation();
   useEffect(() => {
     const pathFinder = () => {
       switch (pathname) {
         case "/Strategic-Platform":
           setTopic("Strategic Platform");
+          setTopicPara(
+            "Masdar’s initiatives and world-class industry platforms are advancing the global dialogue on sustainability."
+          );
           break;
         case "/ADSW":
           setTopic("ADSW");
+          setTopicPara(
+            "The Masdar-hosted Abu Dhabi Sustainability Week is one of the largest sustainability gatherings in the world and acts as a global platform for advancing sustainable development."
+          );
           break;
         case "/ZSP":
-          setTopic("ZSP");
+          setTopic("Zayed Sustainability Prize");
+          setTopicPara(
+            "The Zayed Sustainability Prize is an annual award that rewards companies and organisations that demonstrate tangible, positive impact through sustainable solutions."
+          );
           break;
         case "/WiSER":
           setTopic("WiSER");
+          setTopicPara(
+            "          The Women in Sustainability, Environment and Renewable Energy platform is dedicated to inspiring women and girls to play an active role in addressing global sustainability challenges.          "
+          );
           break;
         case "/Youth":
           setTopic("Youth");
+          setTopicPara(
+            "News and stories about youth and Masdar’s youth-related initiatives and strategic platforms."
+          );
           break;
         default:
           console.log("path not matched");
@@ -47,11 +63,7 @@ const StrategicPlatform = () => {
         </div>
         <div className="strategy__header--bar">
           <h2>{topic}</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Consequuntur excepturi sed dolores natus voluptatem facere unde
-            suscipit, beatae vero perferendis fuga distinctio.
-          </p>
+          <p>{topicPara}</p>
         </div>
       </div>
       <div className="strategy__body">

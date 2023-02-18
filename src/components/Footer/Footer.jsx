@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineMail } from "react-icons/ai";
-import logo from "../../assets/images/footer-logo.png";
+import logo from "../../assets/footer-logo.png";
 import "./Footer.scss";
 const Footer = () => {
   return (
@@ -19,7 +19,7 @@ const Footer = () => {
           </div>
           <label htmlFor="term">
             <input type="checkbox" name="term" id="term" />
-            Confirm Terms & Agreements
+            Confirm <Link to={"/Term-And-Conditions"}>term and conditions</Link>
           </label>
           <button type="submit">SUBSCRIBE</button>
         </form>

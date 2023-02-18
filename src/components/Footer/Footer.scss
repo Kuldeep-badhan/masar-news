@@ -24,6 +24,12 @@
     padding: 3rem 4rem;
     display: flex;
     justify-content: flex-end;
+    a {
+      transition: $transition;
+      &:hover {
+        color: $primary;
+      }
+    }
     @include for-tablet-up() {
       justify-content: center;
       width: 100%;

@@ -17,7 +17,7 @@
 }
 .header__container {
   background-color: $white;
-  box-shadow: 0 3px 45px rgb(211, 209, 209);
+  box-shadow: 0 3px 10px rgb(211, 209, 209);
   height: 80px;
   @include for-tablet-up() {
     height: auto;

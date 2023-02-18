@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../components/Card/Card";
-import dummyData from "../../assets/data/dummyData";
+import dummyData from "../../assets/data/data";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import "./CleanEnegy.scss";
 const CleanEnegy = () => {
@@ -15,9 +15,8 @@ const CleanEnegy = () => {
         <div className="clean__energy__header--bar">
           <h2>Clean Energy</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Consequuntur excepturi sed dolores natus voluptatem facere unde
-            suscipit, beatae vero perferendis fuga distinctio.
+            Masdar is one of the largest developers of renewable energy in the
+            Middle East and is at the forefront of clean-tech innovation.
           </p>
         </div>
       </div>

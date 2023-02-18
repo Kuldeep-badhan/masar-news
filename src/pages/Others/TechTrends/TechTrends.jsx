@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../../components/Card/Card";
-import dummyData from "../../../assets/data/dummyData";
+import data from "../../../assets/data/data";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import "./TechTrends.scss";
 const Topic = () => {
@@ -15,14 +15,13 @@ const Topic = () => {
         <div className="tech__trends__header--bar">
           <h2>Tech Trends</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Consequuntur excepturi sed dolores natus voluptatem facere unde
-            suscipit, beatae vero perferendis fuga distinctio.
+            Expertise on the latest trends in clean-tech, renewable energy and
+            sustainable development.
           </p>
         </div>
       </div>
       <div className="tech__trends__body">
-        {dummyData.map((item, index) => {
+        {data.map((item, index) => {
           return (
             <Card
               key={index + 1}

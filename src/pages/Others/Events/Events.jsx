@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../../components/Card/Card";
-import dummyData from "../../../assets/data/dummyData";
+import data from "../../../assets/data/data";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 
 import "./Events.scss";
@@ -16,14 +16,13 @@ const Events = () => {
         <div className="events__header--bar">
           <h2>Events</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Consequuntur excepturi sed dolores natus voluptatem facere unde
-            suscipit, beatae vero perferendis fuga distinctio.
+            Several upcoming corporate and community events are planned to
+            maintain a continuous dialogue with our stakeholders
           </p>
         </div>
       </div>
       <div className="events__body">
-        {dummyData.map((item, index) => {
+        {data.map((item, index) => {
           return (
             <Card
               key={index + 1}
