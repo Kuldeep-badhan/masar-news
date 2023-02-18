@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../../../components/Card/Card";
 import dummyData from "../../../assets/data/dummyData";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
 import "./TechTrends.scss";
 const Topic = () => {
   return (
@@ -8,7 +9,7 @@ const Topic = () => {
       <div className="tech__trends__header">
         <div className="tech__trends__header--page">
           <span>Masdar News</span>
-          <span>arrow</span>
+          <MdOutlineArrowForwardIos className="forward__icon" />
           <span>Tech Trends</span>
         </div>
         <div className="tech__trends__header--bar">

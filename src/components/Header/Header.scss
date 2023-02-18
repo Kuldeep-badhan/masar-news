@@ -5,6 +5,11 @@
     @content;
   }
 }
+@mixin for-tablet-medium-up {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
 @mixin for-mobile-up {
   @media (max-width: 480px) {
     @content;
@@ -201,6 +206,10 @@
             width: 90vw;
             flex-direction: column;
             align-items: unset;
+            // &:hover:not(li:first-child) {
+            //   background-color: $info;
+            //   opacity: 0.8;
+            // }
           }
           .header__strategy-nav {
             position: static !important;
@@ -292,6 +301,9 @@
           right: 30%;
           gap: 1rem;
           top: 100%;
+        }
+        @include for-tablet-medium-up() {
+          right: 10%;
         }
         @include for-mobile-up() {
           right: 0;

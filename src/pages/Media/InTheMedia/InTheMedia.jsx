@@ -1,6 +1,8 @@
 import React from "react";
 import Card from "../../../components/Card/Card";
 import dummyData from "../../../assets/data/dummyData";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
+
 import "./InTheMedia.scss";
 const InTheMedia = () => {
   return (
@@ -8,7 +10,8 @@ const InTheMedia = () => {
       <div className="in__the__media__header">
         <div className="in__the__media__header--page">
           <span>Masdar News</span>
-          <span>arrow</span>
+          <MdOutlineArrowForwardIos className="forward__icon" />
+
           <span>In The Media</span>
         </div>
         <div className="in__the__media__header--bar">

@@ -1,6 +1,8 @@
 import React from "react";
 import Card from "../../../components/Card/Card";
 import dummyData from "../../../assets/data/dummyData";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
+
 import "./Events.scss";
 const Events = () => {
   return (
@@ -8,7 +10,7 @@ const Events = () => {
       <div className="events__header">
         <div className="events__header--page">
           <span>Masdar News</span>
-          <span>arrow</span>
+          <MdOutlineArrowForwardIos className="forward__icon" />
           <span>Events</span>
         </div>
         <div className="events__header--bar">

@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../../components/Card/Card";
 import dummyData from "../../assets/data/dummyData";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
 import "./CleanEnegy.scss";
 const CleanEnegy = () => {
   return (
@@ -8,7 +9,7 @@ const CleanEnegy = () => {
       <div className="clean__energy__header">
         <div className="clean__energy__header--page">
           <span>Masdar News</span>
-          <span>arrow</span>
+          <MdOutlineArrowForwardIos className="forward__icon" />
           <span>Clean Energy</span>
         </div>
         <div className="clean__energy__header--bar">
