@@ -202,7 +202,7 @@ const Header = () => {
                       setBar(false);
                       setToggleTopic(false);
                     }}
-                    to={"/Media"}
+                    to={"#"}
                   >
                     Media
                   </Link>

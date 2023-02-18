@@ -1,4 +1,4 @@
-@import "../../styleUtils/vars.scss";
+@import "../../../styleUtils/vars.scss";
 
 @mixin for-laptop-large-up {
   @media (min-width: 1400px) {
@@ -36,7 +36,7 @@
   }
 }
 
-.topic {
+.in__the__media {
   min-height: 100vh;
   width: 98%;
   margin: auto;
