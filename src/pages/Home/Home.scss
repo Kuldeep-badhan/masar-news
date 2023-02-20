@@ -362,6 +362,7 @@
           height: 280px;
           width: 280px;
           gap: 0.2rem;
+          padding: 1rem;
         }
         @include for-laptop-up() {
           .custom__card {

@@ -34,6 +34,17 @@ const Home = () => {
   const [card, setCard] = useState(0);
   const home = [
     {
+      id: 1,
+      heading:
+        "The UAE and France agree to form bilateral partnership to focus on the decarbonization of hard-to-abate (HTA) industries",
+      desc: "His Excellency Dr Sultan Ahmed Al Jaber, UAE Minister of Industry and Advanced Technology, President-Designate for COP28, and Chairman of Masdar, yesterday conferred with His Excellency Bruno Le Maire, Minister of the Economy, Finance, and Industrial and Digital Sovereignty, as part of the French Minister’s visit to the United Arab Emirates.",
+      imgSrc: shekh,
+      date: " 31 Jan 2023",
+      topic: " Corporate, Clean Energy, Projects, Partnership, Sultan Al Jaber",
+      tag: "Corporate",
+      url: "/Corporate/1",
+    },
+    {
       id: 17,
       heading:
         "Masdar Signs Agreement to Explore Exporting Green Hydrogen from Abu Dhabi to EuropeThe UAE and France agree to form bilateral partnership to focus on the decarbonization of hard-to-abate (HTA) industries",
@@ -203,14 +214,12 @@ const Home = () => {
       url: "https://www.traveldailynews.com/regional-news/etihad-airways-flies-the-worlds-first-flight-using-fuel-made-in-the-uae-from-plants/",
 
       imgSrc: inthemedia1,
-      url: "/In-The-Media/14",
       tag: "In The Media",
     },
     {
       id: 15,
       heading: "Weekly renewables M&A round-up (Jan 14-20)",
-
-      url: "/In-The-Media/15",
+      url: "https://www.traveldailynews.com/regional-news/etihad-airways-flies-the-worlds-first-flight-using-fuel-made-in-the-uae-from-plants/",
       imgSrc: inthemedia2,
       tag: "In The Media",
     },

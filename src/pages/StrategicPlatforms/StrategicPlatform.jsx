@@ -72,7 +72,6 @@ const StrategicPlatform = () => {
             <Card
               key={item.id}
               tag={item.tag}
-              desc={item.desc.substring(0, 40) + "..."}
               imgSrc={item.imgSrc}
               heading={item.heading.substring(0, 20) + "..."}
               redirectUrl={item.url}
