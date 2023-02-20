@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Card.scss";
-const Card = ({ heading, tag, desc, imgSrc }) => {
+const Card = ({ heading, tag, desc, imgSrc, redirectUrl }) => {
   return (
     <Link
-      to={"#"}
+      to={redirectUrl}
       className="card custom__card"
       style={{
         backgroundImage: `url(${imgSrc})`,

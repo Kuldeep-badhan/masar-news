@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   BsArrowRight,
@@ -7,6 +7,8 @@ import {
   BsYoutube,
 } from "react-icons/bs";
 import shekh from "../../assets/homeImg/shekh.jpeg";
+import shekh2 from "../../assets/homeImg/shekh2.jpg";
+import shekh3 from "../../assets/homeImg/shekh3.jpg";
 import home1 from "../../assets/homeImg/homeg1.jpg";
 import home2 from "../../assets/homeImg/homeg2.jpg";
 import home3 from "../../assets/homeImg/homeg3.jpg";
@@ -25,115 +27,203 @@ import techtrends from "../../assets/homeImg/techtrends.jpg";
 import inthemedia1 from "../../assets/homeImg/inthemedia1.jpg";
 import inthemedia2 from "../../assets/homeImg/inthemedia2.jpg";
 import Card from "../../components/Card/Card";
+import Card2 from "../../components/Card2/Card2";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import "./Home.scss";
 const Home = () => {
+  const [card, setCard] = useState(0);
   const home = [
     {
-      heading: "heading",
-      desc: "description",
-      imgSrc: shekh,
-      tag: "corporate",
+      id: 17,
+      heading:
+        "Masdar Signs Agreement to Explore Exporting Green Hydrogen from Abu Dhabi to EuropeThe UAE and France agree to form bilateral partnership to focus on the decarbonization of hard-to-abate (HTA) industries",
+      desc: "Masdar, one of the world’s leading clean energy companies, Port of Amsterdam, SkyNRG, Evos Amsterdam and Zenith Energy have signed a memorandum of understanding (MoU) to explore the development of a green hydrogen supply chain between Abu Dhabi and Amsterdam to support Dutch and European markets. ",
+      imgSrc: shekh2,
+      tag: "Clean Energy",
+      topic: "Clean Energy, Projects, Sultan Al Jaber",
+      date: " 13 Jan 2023",
+      url: "/Clean-Energy/17",
+    },
+    {
+      id: 18,
+      heading:
+        "Masdar film shows London Array’s impact on British coastal community",
+      desc: "Masdar’s London Array, one of the world’s largest wind farms, has been helping to power half a million British homes, create jobs, and cut carbon emissions. The offshore facility has brought jobs to Britain’s north Kent coast. It has also helped to shrink the UK’s carbon footprint by generating 630 megawatts (MW) of renewable energy and, displacing 925,000 tonnes of carbon dioxide per year. ",
+      imgSrc: shekh3,
+      tag: "Clean Energy",
+      topic: " Clean Energy, Power to change",
+      date: "  03 Jan 2023",
+      url: "/Clean-Energy/18",
     },
   ];
   const techtrendsarr = [
     {
-      heading: "heading",
+      id: 2,
+      heading:
+        "Abu Dhabi’s Department of Energy to support Abu Dhabi Sustainability Week as Principal Partner",
       desc: "description",
       imgSrc: techtrends,
-      tag: "corporate",
+      date: " 07 Jan 2021",
+      topic: " ADSW, Strategic Platforms",
+      tag: "Tech Trends",
+      url: "/Tech-Trends/2",
     },
   ];
   const homeg = [
     {
-      heading: "heading",
+      heading:
+        "Abu Dhabi Sustainability Week 2023 Successfully Concludes Setting UAE on Road to COP28",
+      id: 3,
       desc: "description",
       imgSrc: home1,
-      tag: "corporate",
+      tag: "ADSW",
+      topic: " ADSW, Strategic Platforms, Sultan Al Jaber",
+      date: " 24 Jan 2023",
+      url: "/ADSW/3",
     },
     {
-      heading: "heading",
-      desc: "description",
+      id: 4,
+      heading:
+        "Masdar to Develop 5 GW of Renewable Energy Projects to Advance Africa’s Clean Energy Objectives",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, maxime laudantium! Laboriosam illum nihil aliquid veritatis rerum vero ea, velit asperiores iusto deleniti nulla?  ",
       imgSrc: home2,
-      tag: "corporate",
+      tag: "Clean Energy",
+      url: "/Clean-Energy/4",
     },
     {
-      heading: "heading",
+      id: 5,
+      heading:
+        "Masdar and DEWA Commit to Support UAE Sustainability Objectives with Partnership Agreement for ADSW and WETEX",
       desc: "description",
+      date: " 18 Jan 2023",
       imgSrc: home3,
-      tag: "corporate",
+      tag: " ADSW",
+      topic: " ADSW",
+      url: "/ADSW/5",
     },
     {
-      heading: "heading",
+      id: 6,
+      heading:
+        "Masdar Signs Agreement to Develop Clean Energy Projects in Kyrgyzstan with 1 GW Capacity",
+      date: " 10 Jan 2023",
       desc: "description",
       imgSrc: home4,
-      tag: "corporate",
+      tag: "Clean Energy",
+      topic: "Projects",
+      url: "/Clean-Energy/6",
     },
   ];
   const clean = [
     {
-      heading: "heading",
+      id: 7,
+      heading:
+        "Masdar and IFC Agree to Explore Ways to Advance Climate Action in Emerging Markets",
       desc: "description",
       imgSrc: clean1,
-      tag: "corporate",
+      tag: "Clean Energy",
+      topic: "Clean Energy, Projects",
+      date: " 14 Feb 2023",
+      url: "/Clean-Energy/7",
     },
     {
-      heading: "heading",
+      id: 8,
+      heading:
+        "Masdar Opens Office in Azerbaijan to Support Nation’s Clean Energy Objectives",
       desc: "description",
+      date: " 06 Feb 2023",
+      topic: " Clean Energy, Corporate",
       imgSrc: clean2,
-      tag: "corporate",
+      url: "/Clean-Energy/8",
+
+      tag: "Clean Energy",
     },
     {
-      heading: "heading",
+      id: 9,
+      heading:
+        "Emerge Partners with Coca-Cola Al Ahlia Beverages’ on new Solar Project",
       desc: "description",
+      topic: " Clean Energy, Projects, Partnership",
+      date: " 26 Jan 2023",
+      url: "/Clean-Energy/9",
       imgSrc: clean3,
-      tag: "corporate",
+      tag: "Clean Energy",
     },
     {
-      heading: "heading",
+      id: 10,
+      heading:
+        "Masdar, TotalEnergies, Siemens Energy and Marubeni to certify a novel pathway to make Sustainable Aviation Fuel (SAF) from methano",
       desc: "description",
+      date: "25 Jan 2023",
+      topic: " Clean Energy, Partnership, Projects",
       imgSrc: clean4,
-      tag: "corporate",
+      url: "/Clean-Energy/10",
+      tag: "Clean Energy",
     },
   ];
   const strategy = [
     {
-      heading: "heading",
+      id: 11,
+      heading:
+        "Masdar’s WiSER Annual Forum Explores Plans to Boost Women’s Leadership in Climate Adaptation at ADSW 2023",
       desc: "description",
       imgSrc: strategy1,
-      tag: "corporate",
+      date: "19 Jan 2023",
+      topic: " Strategic Platforms, WiSER",
+      url: "/Strategic-Platform/11",
+      tag: "Strategic Platforms",
     },
     {
-      heading: "heading",
+      id: 12,
+      heading:
+        "Abu Dhabi Sustainability Week 2023 to Set Agenda for Inclusive Climate Action",
+      date: " 23 Dec 2022",
+      topic: " Strategic Platforms, ADSW",
+      url: "/Strategic-Platform/12",
       desc: "description",
       imgSrc: strategy2,
-      tag: "corporate",
+      tag: "Strategic Platforms",
     },
     {
-      heading: "heading",
+      id: 13,
+      heading:
+        "Masdar Champions Women at Forefront of Global Net-Zero Transition at COP27",
+      topic: "Strategic Platforms, WiSER",
+      date: " 18 Nov 2022",
+      url: "/Strategic-Platform/13",
       desc: "description",
       imgSrc: strategy3,
-      tag: "corporate",
+      tag: "Strategic Platforms",
     },
   ];
   const intheMedia = [
     {
-      heading: "heading",
-      desc: "description",
+      id: 14,
+      heading:
+        "Etihad Airways flies the world’s first flight using fuel made in the UAE from plants",
+      url: "https://www.traveldailynews.com/regional-news/etihad-airways-flies-the-worlds-first-flight-using-fuel-made-in-the-uae-from-plants/",
+
       imgSrc: inthemedia1,
-      tag: "corporate",
+      url: "/In-The-Media/14",
+      tag: "In The Media",
     },
     {
-      heading: "heading",
-      desc: "description",
+      id: 15,
+      heading: "Weekly renewables M&A round-up (Jan 14-20)",
+
+      url: "/In-The-Media/15",
       imgSrc: inthemedia2,
-      tag: "corporate",
+      tag: "In The Media",
     },
     {
-      heading: "heading",
+      id: 2,
+      heading:
+        "Abu Dhabi’s Department of Energy to support Abu Dhabi Sustainability Week as Principal Partner",
       desc: "description",
       imgSrc: techtrends,
-      tag: "corporate",
+      date: " 07 Jan 2021",
+      topic: " ADSW, Strategic Platforms",
+      tag: "Tech Trends",
+      url: "/Tech-Trends/2",
     },
   ];
 
@@ -141,28 +231,22 @@ const Home = () => {
     <div className="home container">
       <div className="home__top">
         <div className="home__top--left">
-          {" "}
-          {home.map((item, index) => {
-            return (
-              <Card
-                key={index + 1}
-                heading={item.heading}
-                desc={item.desc}
-                imgSrc={item.imgSrc}
-                tag={item.tag}
-              />
-            );
-          })}
+          <Card2
+            cardLoc={card}
+            cardSetter={setCard}
+            translateX={`translateX(${-100 * card}%)`}
+            imagesArray={home}
+          />
         </div>
         <div className="home__top--right">
           {homeg.map((item, index) => {
             return (
               <Card
-                key={index + 1}
-                heading={item.heading}
-                desc={item.desc}
+                key={item.id}
+                heading={item.heading.substring(0, 30) + "..."}
                 imgSrc={item.imgSrc}
                 tag={item.tag}
+                redirectUrl={item.url}
               />
             );
           })}
@@ -206,11 +290,11 @@ const Home = () => {
             return (
               <div className="energy__option">
                 <Card
-                  key={index + 1}
-                  heading={item.heading}
+                  key={item.id}
+                  heading={item.heading.substring(0, 30) + "..."}
                   imgSrc={item.imgSrc}
-                  desc={item.desc}
                   tag={item.tag}
+                  redirectUrl={item.url}
                 />
               </div>
             );
@@ -231,11 +315,11 @@ const Home = () => {
               return (
                 <div className="energy__option">
                   <Card
-                    key={index + 1}
-                    heading={item.heading}
+                    key={item.id}
+                    heading={item.heading.substring(0, 30) + "..."}
                     imgSrc={item.imgSrc}
-                    desc={item.desc}
                     tag={item.tag}
+                    redirectUrl={item.url}
                   />
                 </div>
               );
@@ -255,11 +339,11 @@ const Home = () => {
               return (
                 <div className="energy__option">
                   <Card
-                    key={index + 1}
-                    heading={item.heading}
+                    key={item.id}
+                    heading={item.heading.substring(0, 30) + "..."}
                     imgSrc={item.imgSrc}
-                    desc={item.desc}
                     tag={item.tag}
+                    redirectUrl={item.url}
                   />
                 </div>
               );
@@ -286,11 +370,10 @@ const Home = () => {
             return (
               <div className="energy__option">
                 <Card
-                  key={index + 1}
-                  heading={item.heading}
+                  key={item.id}
+                  heading={item.heading.substring(0, 30) + "..."}
                   imgSrc={item.imgSrc}
-                  desc={item.desc}
-                  tag={item.tag}
+                  redirectUrl={item.url}
                 />
               </div>
             );

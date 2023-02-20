@@ -30,7 +30,9 @@ const Footer = () => {
             <Link to={"/Clean-Energy"}>CLEAN ENERGY</Link>
           </div>
           <div className="links">
-            <h3>STRATEGIC PLATFORMS</h3>
+            <Link to={"/Strategic-Platform"} className={"strategic"}>
+              STRATEGIC PLATFORMS
+            </Link>
             <Link to={"/ADSW"}>ADSW</Link>
             <Link to={"/ZSP"}>ZSP</Link>
             <Link to={"/WiSER"}>WiSER</Link>

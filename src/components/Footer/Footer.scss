@@ -1,5 +1,11 @@
 @import "../../styleUtils/vars.scss";
 
+@mixin for-laptop-small {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
 @mixin for-tablet-up {
   @media (max-width: 900px) {
     @content;
@@ -26,26 +32,9 @@
     justify-content: flex-end;
     a {
       transition: $transition;
+      // width: 150px;
       &:hover {
         color: $primary;
-      }
-    }
-    @include for-tablet-up() {
-      justify-content: center;
-      width: 100%;
-      padding: 1rem;
-      form {
-        flex-direction: row !important;
-        align-items: center;
-        label {
-          width: 250px !important;
-        }
-      }
-    }
-    @include for-mobile-up() {
-      form {
-        flex-direction: column !important;
-        text-align: center;
       }
     }
     form {
@@ -91,10 +80,30 @@
         }
       }
     }
+    @include for-laptop-small() {
+      padding: 2rem;
+    }
+    @include for-tablet-up() {
+      justify-content: center;
+      width: 100%;
+      padding: 1rem;
+      form {
+        flex-direction: row;
+        align-items: center;
+        label {
+          width: 250px;
+        }
+      }
+    }
+    @include for-mobile-up() {
+      form {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
   }
   &__nav {
     width: 80%;
-
     padding: 3vw 1vw 1vw 1vw;
     box-shadow: 0 2px 5px $info, 0 -2px 5px $info;
     @include for-tablet-up() {
@@ -109,7 +118,8 @@
       .links {
         display: flex;
         flex-direction: column;
-        h3 {
+        h3,
+        .strategic {
           color: $gray-dark;
           font-weight: 500;
           font-size: 1rem;

@@ -67,14 +67,15 @@ const StrategicPlatform = () => {
         </div>
       </div>
       <div className="strategy__body">
-        {dummyData.map((item, index) => {
+        {dummyData.map((item) => {
           return (
             <Card
-              key={index + 1}
+              key={item.id}
               tag={item.tag}
-              desc={item.desc}
+              desc={item.desc.substring(0, 40) + "..."}
               imgSrc={item.imgSrc}
-              heading={item.heading}
+              heading={item.heading.substring(0, 20) + "..."}
+              redirectUrl={item.url}
             />
           );
         })}

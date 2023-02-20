@@ -20,6 +20,11 @@
     @content;
   }
 }
+@mixin for-mobile-large-up() {
+  @media (max-width: 570px) {
+    @content;
+  }
+}
 @mixin for-mobile-up() {
   @media (max-width: 480px) {
     @content;
@@ -37,6 +42,7 @@
   @include for-mobile-up() {
     padding: 1rem;
   }
+
   &__top {
     display: flex;
     justify-content: center;
@@ -50,13 +56,14 @@
       flex-direction: column;
       height: auto;
     }
+    @include for-mobile-up() {
+      gap: 1rem;
+    }
 
     &--left {
       height: 100%;
       width: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      overflow: hidden;
       @include for-tablet-up() {
         height: 95vw;
         width: 100%;
@@ -64,17 +71,10 @@
       @include for-mobile-up() {
         height: 88vw;
         width: 100%;
-        .custom__card {
-          gap: 0.2rem;
-        }
-      }
-
-      .custom__card {
-        height: 100%;
-        width: 100%;
-        img {
-          width: 100%;
-          object-fit: cover;
+        .custom__card2 {
+          .details {
+            padding: 1rem !important;
+          }
         }
       }
     }
@@ -85,20 +85,27 @@
       place-items: center;
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
-      @include for-tablet-up() {
-        height: 100vw;
-        width: 100%;
-      }
-      @include for-mobile-up() {
-        height: 350vw;
-        width: 100%;
-        grid-template-columns: 1fr;
-      }
       .custom__card {
         height: 100%;
         width: 100%;
         padding: 0.8rem;
         gap: 0.2rem;
+      }
+      @include for-tablet-up() {
+        height: 100vw;
+        width: 100%;
+      }
+      @include for-mobile-up() {
+        height: 380vw;
+        width: 100%;
+        margin: auto;
+        grid-template-columns: 1fr;
+        .custom__card {
+          height: 88vw;
+          width: 95%;
+          padding: 0.8rem;
+          gap: 0.2rem;
+        }
       }
     }
   }
@@ -107,7 +114,7 @@
     align-items: center;
     gap: 1rem;
     background-color: $white;
-    box-shadow: $shadow;
+    box-shadow: 0 3px 10px $info, 0 -3px 10px $info;
     padding: 2rem;
     width: 100%;
     h3 {
@@ -173,6 +180,7 @@
     background-color: $white;
     box-shadow: $shadow;
     padding: 2rem;
+    box-shadow: 0 3px 10px $info, 0 -3px 10px $info;
     width: 100%;
     @include for-tablet-up() {
       padding: 1rem;
@@ -192,7 +200,9 @@
       }
     }
     .bottom {
-      display: flex;
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.8rem;
       width: 100%;
 
@@ -213,6 +223,12 @@
         }
       }
       @include for-tablet-up() {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        .custom__card {
+          height: 43vw;
+          width: 43vw;
+        }
       }
       @include for-tablet-medium-up() {
         display: grid;
@@ -225,7 +241,12 @@
       }
       @include for-mobile-up() {
         grid-template-columns: 1fr;
+        place-items: center;
         height: 350vw;
+        .custom__card {
+          height: 80vw;
+          width: 80vw;
+        }
       }
     }
   }
@@ -244,6 +265,7 @@
       background-color: $white;
       box-shadow: $shadow;
       padding: 1.5rem;
+      box-shadow: 0 3px 10px $info, 0 -3px 10px $info;
       flex: 0.8;
       .top {
         display: flex;
@@ -260,7 +282,8 @@
         }
       }
       .bottom {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
         .custom__card {
           height: 280px;
@@ -278,14 +301,23 @@
         }
         @include for-tablet-up() {
           .custom__card {
-            flex: 1;
-            height: 26vw;
-            width: 26vw;
+            // flex: 1;
+            height: 28vw;
+            width: 28vw;
+          }
+        }
+        @include for-tablet-medium-up() {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.5rem;
+          .custom__card {
+            height: 43vw;
+            width: 43vw;
           }
         }
         @include for-mobile-up() {
-          flex-direction: column;
+          grid-template-columns: 1fr;
           height: 250vw;
+          gap: 1rem;
           .custom__card {
             flex: 1;
             height: 80vw !important;
@@ -302,6 +334,10 @@
       padding: 1.5rem 0.5rem;
       background-color: $white;
       gap: 1rem;
+      box-shadow: 0 3px 10px $info, 0 -3px 10px $info;
+      @include for-tablet-up() {
+        padding: 1rem;
+      }
       .top {
         display: flex;
         justify-content: space-between;
@@ -335,12 +371,28 @@
           }
         }
         @include for-tablet-up() {
+          .custom__card {
+            flex: 0.4;
+            height: 40vw;
+            width: 40vw;
+            gap: 0.2rem;
+          }
           .trends__para {
             display: block;
           }
         }
+        @include for-mobile-large-up() {
+          flex-direction: column;
+          align-items: center;
+          .custom__card {
+            height: 80vw;
+            width: 80vw;
+            gap: 0.2rem;
+          }
+        }
         @include for-mobile-up() {
           flex-direction: column;
+          align-items: center;
           .custom__card {
             height: 80vw;
             width: 80vw;
@@ -378,7 +430,8 @@
       }
     }
     .bottom {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
       .custom__card {
         height: 280px;
@@ -396,14 +449,23 @@
       }
       @include for-tablet-up() {
         .custom__card {
-          flex: 1;
-          height: 26vw;
-          width: 26vw;
+          // flex: 1;
+          height: 28vw;
+          width: 28vw;
+        }
+      }
+      @include for-tablet-medium-up() {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        .custom__card {
+          height: 43vw;
+          width: 43vw;
         }
       }
       @include for-mobile-up() {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         height: 250vw;
+        gap: 1rem;
         .custom__card {
           flex: 1;
           height: 80vw !important;
@@ -422,13 +484,14 @@
     }
     .left {
       width: 75%;
+      box-shadow: $shadow;
       background-color: $white;
       padding: 2rem;
       @include for-tablet-up() {
         width: 100%;
         height: 800px;
       }
-      @include for-mobile-up() {
+      @include for-mobile-large-up() {
         height: 1000px;
         padding: 1rem;
       }
@@ -454,11 +517,12 @@
             grid-column: 1/3;
           }
         }
-        @include for-mobile-up() {
+        @include for-mobile-large-up() {
           grid-template-columns: 1fr;
           .social__card:nth-child(3) {
             grid-column: auto;
           }
+          padding-bottom: 2rem;
         }
         .social__card {
           display: flex;
@@ -493,6 +557,7 @@
     }
     .right {
       width: 25%;
+      box-shadow: $shadow;
       display: flex;
       flex-direction: column;
       gap: 1rem;

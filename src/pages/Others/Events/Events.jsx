@@ -27,9 +27,10 @@ const Events = () => {
             <Card
               key={index + 1}
               tag={item.tag}
-              desc={item.desc}
+              desc={item.desc.substring(0, 40) + "..."}
               imgSrc={item.imgSrc}
-              heading={item.heading}
+              heading={item.heading.substring(0, 20) + "..."}
+              redirectUrl={item.url}
             />
           );
         })}
