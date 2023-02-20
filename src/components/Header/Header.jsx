@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Header.scss";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TbSocial } from "react-icons/tb";
@@ -7,7 +7,7 @@ import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineMinus } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { RxCross1 } from "react-icons/rx";
 import logo from "../../assets/News.svg";
 import awards from "../../assets/topics/awards.png";
@@ -33,10 +33,15 @@ const Header = () => {
   const [mediaToggle, setMediaToggle] = useState(false);
   const [search, setSearch] = useState(false);
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
-
+  const { pathname } = useLocation();
+  const myRef = React.createRef();
   const resizeFn = () => {
     setInnerWidth(window.innerWidth);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   useEffect(() => {
     window.addEventListener("resize", resizeFn);
@@ -45,7 +50,7 @@ const Header = () => {
     };
   }, [innerWidth]);
   return (
-    <div className="header__container">
+    <div id="header" ref={myRef} className="header__container">
       <div className="header">
         <div className="header__logo">
           <Link
