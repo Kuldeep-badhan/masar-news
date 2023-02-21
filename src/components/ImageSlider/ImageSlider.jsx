@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import "./Card2.scss";
-const ImageSlider = ({ imagesArray, cardLoc, cardSetter }) => {
+import "./ImageSlider.scss";
+const ImageSlider = ({ imagesArray }) => {
   return (
     <div className="image__slider custom__card2">
       <Swiper

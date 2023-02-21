@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   BsArrowRight,
@@ -27,11 +27,10 @@ import techtrends from "../../assets/homeImg/techtrends.jpg";
 import inthemedia1 from "../../assets/homeImg/inthemedia1.jpg";
 import inthemedia2 from "../../assets/homeImg/inthemedia2.jpg";
 import Card from "../../components/Card/Card";
-import Card2 from "../../components/Card2/Card2";
+import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import "./Home.scss";
 const Home = () => {
-  const [card, setCard] = useState(0);
   const home = [
     {
       id: 1,
@@ -240,12 +239,7 @@ const Home = () => {
     <div className="home container">
       <div className="home__top">
         <div className="home__top--left">
-          <Card2
-            cardLoc={card}
-            cardSetter={setCard}
-            translateX={`translateX(${-100 * card}%)`}
-            imagesArray={home}
-          />
+          <ImageSlider imagesArray={home} />
         </div>
         <div className="home__top--right">
           {homeg.map((item, index) => {
